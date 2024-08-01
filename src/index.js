@@ -1,6 +1,8 @@
 import app from "./app.js";
 import { sequelize } from "./database/database.js";
-import './models/Users.js'
+import './models/Users.js';
+
+import { PORT } from "./routes/config.js";
 
 async function main (){
     try {
@@ -10,9 +12,9 @@ async function main (){
       
         console.log('conection is true');
       
-        const port = 9000;
-        app.listen(port);
-        console.log("service listen in port: ", port);
+        
+        app.listen(PORT);
+        console.log("service listen in port: ", PORT);
       } catch (error) {
         console.log('error al conectar a la base de datos ', error);
       }
