@@ -1,3 +1,5 @@
+import { Sequelize } from "sequelize";
+import { sequelize } from "../database/database.js";
 import { UsersCandles } from "../models/Users.js";
 
 export const getUsers = async (req, res) => {
@@ -100,3 +102,18 @@ export const getUser = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
+export const updateDeuda = async(req,res)=>{
+  try {
+    const {id}= req.params;
+    const response = await UsersCandles.update({
+      deuda_pendiente: Sequelize.literal(`deuda_pendiente-${abono}`)
+    },{
+      where:{
+        id
+      }
+    })
+  } catch (error) {
+    return res.status(500).json({message:error.message})
+  }
+}
