@@ -6,7 +6,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors({
-    origin: 'https://john-illimani.github.io/velas_fronted/',  // Reemplaza con el origen desde el cual estás haciendo las solicitudes
+    origin: 'https://john-illimani.github.io',  // Reemplaza con el origen desde el cual estás haciendo las solicitudes
     methods: 'GET,POST,PUT,DELETE',
     credentials: true // Si necesitas enviar cookies o encabezados de autorización
   }));
