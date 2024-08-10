@@ -12,19 +12,22 @@ export const UsersCandles = sequelize.define('userscandles', {
     nombre:{
         type:DataTypes.STRING
     },
-    paterno:{
-        type:DataTypes.STRING
-    },
-    materno:{
-        type:DataTypes.STRING
-    },
     n_telefono:{
         type:DataTypes.STRING
+    },
+    velas_miel:{
+        type:DataTypes.INTEGER
+    },
+    velas_sin_miel:{
+        type:DataTypes.INTEGER
+    },
+    deuda_total:{
+        type:DataTypes.DOUBLE
     },
     deuda_pendiente:{
         type:DataTypes.DOUBLE
     },
-    abono_deuda:{
+    cuenta:{
         type:DataTypes.DOUBLE
     }
 

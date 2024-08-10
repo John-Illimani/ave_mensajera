@@ -15,20 +15,22 @@ export const createUser = async (req, res) => {
   try {
     const {
       nombre,
-      paterno,
-      materno,
       n_telefono,
+      velas_miel,
+      velas_sin_miel,
+      deuda_total,
       deuda_pendiente,
-      abono_deuda,
+      cuenta,
     } = req.body;
 
     const createU = await UsersCandles.create({
       nombre,
-      paterno,
-      materno,
       n_telefono,
+      velas_miel,
+      velas_sin_miel,
+      deuda_total,
       deuda_pendiente,
-      abono_deuda,
+      cuenta,
     });
 
     res.json(createU);
@@ -40,16 +42,15 @@ export const createUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const response= await UsersCandles.destroy({
+    const response = await UsersCandles.destroy({
       where: {
         id,
       },
     });
 
-
-    if(response)
-        return res.status(200).json({message:'succes full deleted user'});
-    console.log('the user to be deleted is: ',req.params.id);
+    if (response)
+      return res.status(200).json({ message: "succes full deleted user" });
+    console.log("the user to be deleted is: ", req.params.id);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -59,11 +60,12 @@ export const updateUser = async (req, res) => {
   try {
     const {
       nombre,
-      paterno,
-      materno,
       n_telefono,
+      velas_miel,
+      velas_sin_miel,
+      deuda_total,
       deuda_pendiente,
-      abono_deuda,
+      cuenta,
     } = req.body;
 
     const { id } = req.params;
@@ -71,12 +73,13 @@ export const updateUser = async (req, res) => {
     const updateU = await UsersCandles.findByPk(id);
 
     updateU.nombre = nombre;
-    updateU.paterno = paterno;
-    updateU.materno = materno;
     updateU.n_telefono = n_telefono;
+    updateU.velas_miel = velas_miel;
+    updateU.velas_sin_miel = velas_sin_miel;
+    updateU.deuda_total = deuda_total;
     updateU.deuda_pendiente = deuda_pendiente;
-    updateU.abono_deuda = abono_deuda;
-
+    updateU.cuenta = cuenta;
+    
     await updateU.save(); /* otra forma de hacer este mismo paso es con:  UsersCandles.set(req.body); */
 
     res.json(updateU);
@@ -94,8 +97,10 @@ export const getUser = async (req, res) => {
       },
     });
 
-    if(!response)
-        return res.status(500).json({message: 'this user not existing in databse'})
+    if (!response)
+      return res
+        .status(500)
+        .json({ message: "this user not existing in databse" });
 
     res.json(response);
   } catch (error) {
@@ -103,17 +108,4 @@ export const getUser = async (req, res) => {
   }
 };
 
-export const updateDeuda = async(req,res)=>{
-  try {
-    const {id}= req.params;
-    const response = await UsersCandles.update({
-      deuda_pendiente: Sequelize.literal(`deuda_pendiente-${abono}`)
-    },{
-      where:{
-        id
-      }
-    })
-  } catch (error) {
-    return res.status(500).json({message:error.message})
-  }
-}
+
