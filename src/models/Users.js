@@ -21,6 +21,9 @@ export const UsersCandles = sequelize.define('userscandles', {
     velas_sin_miel:{
         type:DataTypes.INTEGER
     },
+    otros:{
+        type:DataTypes.INTEGER
+    },
     deuda_total:{
         type:DataTypes.DOUBLE
     },

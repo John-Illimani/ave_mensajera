@@ -19,6 +19,7 @@ export const createUser = async (req, res) => {
       velas_miel,
       velas_sin_miel,
       deuda_total,
+      otros,
       deuda_pendiente,
       cuenta,
     } = req.body;
@@ -28,6 +29,7 @@ export const createUser = async (req, res) => {
       n_telefono,
       velas_miel,
       velas_sin_miel,
+      otros,
       deuda_total,
       deuda_pendiente,
       cuenta,
@@ -63,6 +65,7 @@ export const updateUser = async (req, res) => {
       n_telefono,
       velas_miel,
       velas_sin_miel,
+      otros,
       deuda_total,
       deuda_pendiente,
       cuenta,
@@ -76,6 +79,7 @@ export const updateUser = async (req, res) => {
     updateU.n_telefono = n_telefono;
     updateU.velas_miel = velas_miel;
     updateU.velas_sin_miel = velas_sin_miel;
+    updateU.otros = otros;
     updateU.deuda_total = deuda_total;
     updateU.deuda_pendiente = deuda_pendiente;
     updateU.cuenta = cuenta;
