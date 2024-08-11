@@ -1,6 +1,7 @@
 import express from "express";
 
 import UserRoutes from './routes/user.routes.js';
+import PreciosRoutes from './routes/precios.routes.js';
 import cors from "cors";
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use(UserRoutes);
+app.use(PreciosRoutes);
 
 export default app;
 
