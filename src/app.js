@@ -10,7 +10,8 @@ const app = express();
 
 app.use(cors({
     // origin: 'https://john-illimani.github.io',  // Reemplaza con el origen desde el cual estás haciendo las solicitudes
-    origin: 'http://localhost:5173',
+    // origin: 'http://localhost:5173',
+    origin: 'https://john-illimani.github.io',
     methods: 'GET,POST,PUT,DELETE',
     credentials: true // Si necesitas enviar cookies o encabezados de autorización
   }));
