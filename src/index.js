@@ -10,7 +10,7 @@ import { PORT } from "./routes/config.js";
 async function main (){
     try {
         await sequelize.sync({
-            force:false
+            force:true
         });  /* esta es una manera de probar la coneccion a la base de datos */
       
         console.log('conection is true');
