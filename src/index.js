@@ -2,6 +2,8 @@ import app from "./app.js";
 import { sequelize } from "./database/database.js";
 import './models/Users.js';
 import './models/precios.js';
+import './models/date.js';
+import './models/abonos.js';
 
 import { PORT } from "./routes/config.js";
 
