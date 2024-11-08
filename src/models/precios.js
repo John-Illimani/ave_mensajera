@@ -20,6 +20,9 @@ export const Precios = sequelize.define(
     mexicanas: {
       type: DataTypes.INTEGER,
     },
+    ocho_unidades: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
     timestamps: false,

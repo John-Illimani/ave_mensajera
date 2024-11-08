@@ -11,7 +11,7 @@ export const getPrecios = async (req, res) => {
 
 export const UpdatePrecios = async (req, res) => {
   try {
-    const { miel, sin_miel, batucos, mexicanas } = req.body;
+    const { miel, sin_miel, batucos, mexicanas,ocho_unidades } = req.body;
 
     const { id } = req.params;
 
@@ -21,6 +21,7 @@ export const UpdatePrecios = async (req, res) => {
     updateU.sin_miel = sin_miel;
     updateU.batucos = batucos;
     updateU.mexicanas = mexicanas;
+    updateU.ocho_unidades = ocho_unidades;
    
 
     await updateU.save(); /* otra forma de hacer este mismo paso es con:  UsersCandles.set(req.body); */
