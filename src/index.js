@@ -12,6 +12,7 @@ async function main (){
         await sequelize.sync({
             force:false
         });  /* esta es una manera de probar la coneccion a la base de datos */
+        // hola
       
         console.log('conection is true');
       
